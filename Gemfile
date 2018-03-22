@@ -59,3 +59,5 @@ gem 'jquery-rails'
 
 #Font Awesome
 gem "font-awesome-rails"
+
+ruby "2.4.0"
