@@ -1,2 +1,388 @@
 @import "bootstrap";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+@import url('https://fonts.googleapis.com/css?family=Spinnaker');
 
+$cormorant: 'Cormorant Garamond', serif;
+$spinnaker: 'Spinnaker', sans-serif;
+$accent_color: #FF9900; /*orange-ish*/
+$primary_color: #43C6DB;
+
+.main-body-container {
+	font-family: $cormorant;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 45px;
+	font-size: 30px;
+	letter-spacing: -.5px;
+	color: #2a2d41;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: $cormorant;
+}
+h1, h2 {
+	line-height: 100px;
+	letter-spacing: -1px;
+	color: #000;
+}
+h1 {
+	font-size: 90px;
+}
+h2 {
+	font-size: 70px;
+}
+p {
+	font-family: $spinnaker;
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 400;
+	letter-spacing: -0.3px;
+	color: #63667a;
+}
+.form-control {
+	font-family: $spinnaker;
+	font-size: 14px;
+}
+.row {
+	margin: 0 !important;
+}
+.nopadding {
+	padding: 0 !important;
+}
+.centered {
+	text-align: center;
+}
+.brown { 
+	color: $accent_color;
+}
+.brownhover:hover {
+	color: $accent_color;	
+}
+.dark {
+	background-color: $primary_color;/* prev: 34394F*/
+}
+.grey {
+	background-color: #E8E8E8;
+}
+.white {
+	color: white;
+}
+.lightgrey {
+	color: #ccc;
+}
+.light {
+	color: #777;
+}
+
+.largepadding {
+	padding: 50px 15px;
+}
+.linkbutton {
+	font-family: $spinnaker;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 30px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	background-color: $accent_color;
+	font-size: 17px;
+	color: white;
+}
+.linkbutton:hover {
+	background-color: #f0b050;
+	text-decoration: none;
+	color: white;
+}
+
+/*Nav bar*/
+.navbar-section {
+
+}
+.navbar {
+	background-color: rgba(67, 198, 219, 0.8); /*43C6DB with transparency*/
+
+	a {
+		font-family: $spinnaker;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 30px;
+		letter-spacing: 4px;
+		color: #fff !important;
+		margin-left: 40px;
+		text-transform: uppercase;
+	}
+
+	a:hover {
+		color: $accent_color !important;
+	}
+}
+.belownav {
+	margin-top: 76px;
+}
+
+/*Carousel*/
+.carousel-inner img { /* Make the image fully responsive */
+	width: 100%;
+	height: 100%;
+}
+.carousel-caption {
+	padding: 30px 20px;
+	background-color: rgba(67, 198, 219, 0.3); /*43C6DB with transparency*/
+	bottom: 35% !important;
+}
+
+/*Body Content*/
+.booking-section {
+	margin-top: 10px;
+}
+.booking-heading {
+	text-align: center;
+	background-color: #333;
+	color: #eaeaea;
+	font-size: 35px;
+	padding: 5px;
+	margin: 0 0 20px 0;
+}
+.form-headings {
+	margin: 0;   
+}
+.booking-section .col-md-6 input {
+	font-size: 12px !important;
+}
+.about-section {
+
+}
+.body-card {
+	margin: 0 auto;
+	width: auto;
+	text-align: center;
+	padding: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rooms-section {
+
+}
+.room-example img {
+	width: 100%;
+}
+
+.amenities-section {
+	font-family: $spinnaker;
+	color: #333;
+	font-weight: 400;
+	line-height: 24px;
+	font-size: 12px;
+	letter-spacing: 4px;
+
+	.row {
+		margin: 25px 0 0 0 !important;
+		padding: 0 !important;
+	}
+	.col-sm-12 {
+		padding: 15px 15px; 
+	}
+	.fa {
+		color: #333;
+		font-size: 45px;
+		padding: 5px;
+	}
+}
+
+.breakfast-section {
+	img {
+		width: 100%;
+	}
+}
+
+.gallery-section {
+}
+
+.location-section {
+
+}
+.map-responsive{
+	overflow:hidden;
+	padding-bottom:42%;
+	position:relative;
+	height:0;
+
+	iframe{
+		left:0;
+		top:0;
+		height:500px;
+		width:100%;
+		position:absolute;
+	}
+}
+
+
+.contacts-section {
+	.row {
+		margin: 50px 0 0 0 !important;
+		padding: 0 !important;
+	}
+	p {
+		color: #83869a;
+	}
+	a {
+		font-family: $spinnaker;
+		font-size: 12px;
+		font-weight: 400;
+		letter-spacing: 4px;
+		color: #63667a !important;
+		text-transform: uppercase;
+	}
+	a:hover {
+		color: $accent_color !important;
+	}
+}
+
+footer {
+	padding: 15px 15px 2px 15px;
+}
+
+
+
+/*
+*
+* GALLERY CSS
+*
+*/
+
+
+.gallery-main-image {
+	width: 100%;
+}
+
+.row > .column {
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.gallery-section .row img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 85px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}

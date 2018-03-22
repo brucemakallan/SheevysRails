@@ -1,2 +1,363 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- THE HOME PAGE -->
+
+<!-- CAROUSEL -->
+<div id="demo" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ul class="carousel-indicators">
+		<% @carousel_items.each do |image, image_attributes| %>		
+			<li data-target="#demo" data-slide-to="<%= @carousel_items.find_index { |k,_| k== image }  %>"></li>
+		<% end %>
+	</ul>      
+	<!-- The slideshow -->
+	<div class="carousel-inner">
+		<% @carousel_items.each do |image, image_attributes| %>		
+			<div class="<%= image_attributes[:classes] %>">
+	 			<%= image_tag image_attributes[:image_url], alt: "Carousel Image", width: 1100, height: 500 %>
+	 			<div class="carousel-caption">
+	 				<%= content_tag(:h2, image_attributes[:heading], class: "white") %>
+	 				<%= content_tag(:h3, image_attributes[:subheading], class: "white") %>
+	 			</div>
+	 		</div>
+	 	<% end %>
+	</div>      
+	<!-- Left and right controls -->
+	<a class="carousel-control-prev" href="#demo" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a class="carousel-control-next" href="#demo" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
+</div>
+
+
+<!-- BOOKING -->
+<div class="booking-heading">
+	Book Your Stay
+</div>    
+<div class="container-fluid booking-section">
+	<div class="row form-row">
+		<div class="col-sm-4 box-item"></div> <!-- To help centre the form -->
+		<div class="col-sm-4">
+			<form name="form1" method="post" action="">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<!-- Check in -->
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Check-in date:</p>
+									<input type="date" class="form-control input-lg" name="checkin" id="checkin" required="required">
+								</div>
+							</div>
+							<!-- Check out date -->
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Check-out date:</p>
+									<input type="date" class="form-control input-lg" name="checkout" id="checkout" required="required">
+								</div>
+							</div>
+						</div>   
+						<div class="row">
+							<div class="col-md-9">
+								<p class="form-headings">Adults:</p>
+							</div>
+							<div class="col-md-3">
+								<select class="form-control">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+						</div>
+						<div class="row"><hr style="width: 90%"></div>
+						<div class="row">
+							<div class="col-md-9">
+								<p class="form-headings">Children:</p>
+							</div>
+							<div class="col-md-3">
+								<select class="form-control">
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+						</div>
+						<div class="row"><hr style="width: 90%"></div>
+						<div class="row">
+							<div class="col-md-12">
+								<p><strong>Rates per day:</strong></p>
+								<p>Double = UGX 222,222</p>
+								<p>Single = UGX 111,111</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-4 btn-block" name="btnDone" id="btnDone">Check rooms and rates</button>
+							</div>
+						</div>                                 
+					</div> <!-- End of centered col -->
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-4 box-item"></div> <!-- To help centre the form -->
+	</div>
+</div>
+
+<!-- ABOUT -->
+<div class="container-fluid about-section largepadding" id="about">
+	<div class="body-card">
+		<h1 class="brown">Our Story</h1>
+		<p>Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there--on a mote of dust suspended in a sunbeam.</p>
+
+		<p>It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.</p>
+		<h3>For Booking, don't hesitate to reach out. We're available everyday all day</h3>
+		<a class="linkbutton" href="tel:+256752755899">CALL: 0752-755-899</a>    
+	</div>
+</div>
+
+
+<!-- AMENITIES -->
+<div class="container-fluid amenities-section largepadding dark" id="amenities">
+	<h1 class="white">Amenities</h1>
+	<h3>Get even more than you expected</h3>
+	<p>All our rooms come with great amenities and services. The following are just a few of the main amenities included by default with our rooms.</p>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="row">
+				<div class="col-sm-3">
+					<%= fa_icon "bed" %>
+				</div>
+				<div class="col-sm-9" style="margin-top: 20px;">
+					KING SIZE BEDS
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<%= fa_icon "bus" %>
+				</div>
+				<div class="col-sm-9" style="margin-top: 20px;">
+					24 HOUR SHUTTLE
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="row">
+				<div class="col-sm-3">
+					<%= fa_icon "tv" %>
+				</div>
+				<div class="col-sm-9" style="margin-top: 20px;">
+					TELEVISION
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<%= fa_icon "wifi" %>
+				</div>
+				<div class="col-sm-9" style="margin-top: 20px;">
+					FREE WIFI
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="row">
+				<div class="col-sm-3">
+					<%= fa_icon "shower" %>
+				</div>
+				<div class="col-sm-9" style="margin-top: 20px;">
+					IN-SUITE BATH
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<%= fa_icon "car" %>
+				</div>
+				<div class="col-sm-9" style="margin-top: 20px;">
+					PARKING
+				</div>
+			</div>
+		</div>
+	</div>            
+</div>
+
+
+<!-- ...more Amenities: Breakfast -->
+<div class="breakfast-section">
+	<div class="row">
+		<div class="col-sm-6 nopadding">
+			<%= image_tag "breakfast.jpg" %>
+		</div>
+		<div class="col-sm-6" style="padding: 50px">
+			<h2>Breakfast</h2>  
+			<p>Are you looking to surprise that special someone with a romantic getaway, or would you like to indulge in a culinary feast until the sun goes down, maybe you'd like to unwind while enjoying an amazing bike ride through our scenic route? We're now offering special arrangements that take leisure to a whole other level.</p>
+			<p>It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.</p>
+		</div>
+	</div>
+</div>
+
+
+<!-- ROOMS SECTION -->
+<div class="container-fluid rooms-section largepadding dark" id="rooms">
+	<h1 class="white">The Rooms</h1>
+	<h3>We offer the best Rooms with a wide array of complimentary wonders</h3>
+	<p class="light">+ Mosquito Nets, Towels, Bed-side lamp, Carpet, ...</p>
+</div>
+<!-- ...room photo and details -->
+<div class="room-example">
+	<div class="row">
+		<div class="col-sm-6 nopadding">
+			<%= image_tag "room.jpg" %>
+		</div>
+		<div class="col-sm-6" style="padding: 30px">
+			<h2>Sleep like a King</h2>  
+			<p>Our Room is fully equiped with all sorts of niceties for your comfort</p>
+			<p>Lorem Ipsum. It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.</p>
+		</div>
+	</div>
+</div>
+
+
+<!-- FEEDBACK -->
+<div class="container-fluid location-section largepadding dark" id="feedback">
+	<h1 class="white">Feedback</h1>
+	<h3>Tell us about your experience here</h3>
+	<p class="light">What did you like? What didn't you like?</p>
+</div>
+<div class="container-fluid location-section largepadding">
+	<div class="row form-row">
+		<div class="col-sm-3 box-item"></div> <!-- To help centre the form -->
+		<div class="col-sm-6">
+			<form name="form1" method="post" action="">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<p class="form-headings">Full Name</p>
+									<input type="text" class="form-control input-lg" name="fullname" id="fullname" required="required">
+								</div>
+							</div>
+						</div>   
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Email</p>
+									<input type="email" class="form-control input-lg" name="email" id="email">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Time of stay</p>
+									<input type="date" class="form-control input-lg" name="timeofstay" id="timeofstay" required="required">
+								</div>
+							</div>
+						</div>   
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<p class="form-headings">Rating [From Terrible to Great]</p>
+									<div class="row radio">
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">1</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">2</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">3</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">4</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">5</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">6</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">7</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">8</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">9</p>
+										</div>
+										<div class="col-md-1">
+											<p><input type="radio" name="rating">10</p>
+										</div>
+										<div class="col-md-2"></div>
+									</div>
+								</div>
+							</div>
+						</div>   
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<p class="form-headings">Notes</p>
+									<textarea class="form-control" name="notes" id="notes" rows="5"></textarea>
+								</div>
+							</div>
+						</div>   
+						<div class="row">
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-4 btn-block" name="btnDone" id="btnDone">Send Feedback</button>
+							</div>
+						</div>                                 
+					</div> <!-- End of centered col -->
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-3 box-item"></div> <!-- To help centre the form -->
+	</div>
+</div>
+
+
+<!-- LOCATION -->
+<div class="container-fluid location-section largepadding dark" id="location">
+	<h1 class="white">Location</h1>
+	<h3>It's never been easier to find us</h3>
+	<p class="light">Google Map</p>
+
+	<div class="map-responsive">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.69738184958993!2d30.263039035764688!3d0.6274849638796907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1763d0c564cbfa2d%3A0xb20e45f3a713c552!2sSheevy&#39;s+Bed+%26+Breakfast!5e0!3m2!1sen!2sug!4v1521737815793" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+</div>
+
+
+<!-- CONTACTS -->
+<div class="container-fluid contacts-section largepadding grey" id="contacts">
+	<h1>Contacts</h1>
+	<h3>Feel free to Reach Out</h3>
+	<p>Including 24hr Help and Support via our Telephone Contact</p>
+	<div class="row">
+		<div class="col-sm-3">
+			<%= image_tag "logo.png", height: 120 %>
+		</div>
+		<div class="col-sm-3">
+			<a href="#rooms">rooms</a><br>
+			<a href="#amenities">amenities</a><br>
+			<a href="gallery.html">gallery</a><br>
+			<a href="#location">location</a><br>
+		</div>
+		<div class="col-sm-3">
+			<h4>Address</h4>
+			<p>Fortportal-Kasese Road,</p>
+			<p>Fort Portal,</p>
+			<p>Uganda.</p>
+			<p><a href="tel:+256752755899">0752-755-899</a></p>
+		</div>
+		<div class="col-sm-3">
+			<h4>Business Hours</h4>
+			<p>MON - SUN</p>
+			<p>Open 24 Hours</p>
+		</div>
+	</div>
+</div>

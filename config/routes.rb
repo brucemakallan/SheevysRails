@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'home', to: 'pages#home'
-
   get 'gallery', to: 'pages#gallery'
 
   root to: 'pages#home' #set homepage

@@ -56,3 +56,6 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 #Bootstrap 4
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+
+#Font Awesome
+gem "font-awesome-rails"

@@ -1,2 +1,59 @@
-<h1>Pages#gallery</h1>
-<p>Find me in app/views/pages/gallery.html.erb</p>
+<!-- GALLERY -->
+<div class="container-fluid gallery-section largepadding belownav" id="gallery">
+	<!-- Images used to open the lightbox -->
+	<% image_index = 1 %>
+	<% #@image_rows.times do %> 
+	<% #end %> 
+	<div class="row"> 
+		<% @image_files.each do |image_file| %> 
+			<!-- Check if file exists first -->
+			<% if FileTest.exist?("#{Rails.root}/app/assets/images/gallery/"+image_file.split("/").pop) %>
+				<div class="col-sm-3">
+					<%= image_tag "gallery/"+image_file.split("/").pop, onclick: "openModal();currentSlide(#{image_index})", class: "hover-shadow" %>
+					<% image_index += 1 %>
+				</div>				
+			<% end %>					
+		<% end %>
+	</div>
+	
+	<!-- The Modal/Lightbox -->
+	<div id="myModal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+		<div class="modal-content">
+
+			<!-- <div class="mySlides">
+				<div class="numbertext">1</div>
+				<img src="images/gallery/1.jpg" style="width:100%">
+			</div> -->
+			<% image_index = 1 %>
+			<% @image_files.each do |image_file| %> 
+				<!-- Check if file exists first -->
+				<% if FileTest.exist?("#{Rails.root}/app/assets/images/gallery/"+image_file.split("/").pop) %>
+					<div class="mySlides">
+						<div class="numbertext"><%= image_index %></div>
+						<%= image_tag "gallery/"+image_file.split("/").pop, class: "gallery-main-image" %>
+						<% image_index += 1 %>
+					</div>			
+				<% end %>					
+			<% end %>
+
+			<!-- Next/previous controls -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<div style="display: none;">
+				<!-- Caption text -->
+				<div class="caption-container">
+					<p id="caption"></p>
+				</div>
+				<!-- Thumbnail image controls -->
+				<div class="column">
+					<%= image_tag "gallery/1.jpg", onclick: "currentSlide(1)", width: 200, class: "demo" %>
+				</div>
+				<div class="column">
+					<%= image_tag "gallery/2.jpg", onclick: "currentSlide(2)", width: 200, class: "demo" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
