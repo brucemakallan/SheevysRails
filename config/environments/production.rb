@@ -86,6 +86,10 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+
+  #https://sleepy-basin-13130.herokuapp.com/
+  #config.action_mailer.default_url_options = { host: 'https://sleepy-basin-13130.herokuapp.com', protocol: 'http' }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 

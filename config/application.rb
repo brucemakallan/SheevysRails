@@ -28,5 +28,7 @@ module SheevysRails
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.secret_key_base = ENV["SECRET_KEY_BASE"]
+    config.gmail_username = ENV['gmail_username']
+    config.gmail_password = ENV['gmail_password']
   end
 end
