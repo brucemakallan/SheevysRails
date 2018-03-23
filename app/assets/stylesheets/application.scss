@@ -39,6 +39,10 @@ p {
 	letter-spacing: -0.3px;
 	color: #63667a;
 }
+small {
+	font-family: $spinnaker;
+	font-size: 14px;
+}
 .form-control {
 	font-family: $spinnaker;
 	font-size: 14px;
@@ -73,6 +77,9 @@ p {
 .light {
 	color: #777;
 }
+.greydescription {
+	color: #333;
+}
 
 .largepadding {
 	padding: 50px 15px;
@@ -97,7 +104,7 @@ p {
 
 /*Nav bar*/
 .navbar-section {
-
+	
 }
 .navbar {
 	background-color: rgba(67, 198, 219, 0.8); /*43C6DB with transparency*/
@@ -135,6 +142,10 @@ p {
 /*Body Content*/
 .booking-section {
 	margin-top: 10px;
+
+	.btn {
+		margin-top: 20px;
+	}
 }
 .booking-heading {
 	text-align: center;
@@ -150,13 +161,20 @@ p {
 .booking-section .col-md-6 input {
 	font-size: 12px !important;
 }
+.tariffs {
+	font-family: $spinnaker;
+	font-size: 16px;
+}
+.tocs {
+	font-family: $spinnaker;
+	font-size: 15px;	
+}
 .about-section {
 
 }
 .body-card {
 	margin: 0 auto;
 	width: auto;
-	text-align: center;
 	padding: 30px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -164,8 +182,13 @@ p {
 .rooms-section {
 
 }
-.room-example img {
-	width: 100%;
+.room-example {
+	border-bottom: 3px solid $primary_color;
+
+	img {
+		width: 100%;
+		border-left: 1px solid #eaeaea;
+	}
 }
 
 .amenities-section {
@@ -200,7 +223,7 @@ p {
 }
 
 .location-section {
-
+	
 }
 .map-responsive{
 	overflow:hidden;

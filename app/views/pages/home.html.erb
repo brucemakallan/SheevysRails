@@ -35,12 +35,75 @@
 	Book Your Stay
 </div>    
 <div class="container-fluid booking-section">
-	<div class="row form-row">
-		<div class="col-sm-4 box-item"></div> <!-- To help centre the form -->
-		<div class="col-sm-4">
-			<form name="form1" method="post" action="">
+	<div class="row form-row d-flex h-100">
+		<div class="col-sm-6 tariffs">
+			<div class="row">
+				<div class="col-sm-12 centered">
+					<h3>Accommodation Tariff</h3>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Room Type</th>
+								<th>Double occupancy</th>
+								<th>Single occupancy</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Deluxe</td>
+								<td>USD 70</td>
+								<td>USD 50</td>
+							</tr>
+							<tr>
+								<td>Standard Double</td>
+								<td>USD 60</td>
+								<td>USD 55</td>
+							</tr>
+							<tr>
+								<td>Twin room</td>
+								<td>USD 50</td>
+								<td>USD 45</td>
+							</tr>
+							<tr>
+								<td>Single room</td>
+								<td>USD 45</td>
+								<td>USD 40</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div> 
+
+		<div class="col-sm-6">  <!-- justify-content-center align-self-center -->
+			<%= form_tag "sendmail", name: "form1" do %>
 				<div class="row">
 					<div class="col-md-12">
+						<div class="row">
+							<div class="col-sm-12 centered">
+								<h3>Booking Form</h3>	
+							</div>
+						</div>	
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Full Name:</p>
+									<input type="text" class="form-control input-lg" name="fullname" id="fullname" required="required">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Phone:</p>
+									<input type="text" class="form-control input-lg" name="phone" id="phone" required="required">
+								</div>
+							</div>
+						</div>
+
 						<div class="row">
 							<!-- Check in -->
 							<div class="col-md-6">
@@ -56,67 +119,131 @@
 									<input type="date" class="form-control input-lg" name="checkout" id="checkout" required="required">
 								</div>
 							</div>
-						</div>   
+						</div>
+
 						<div class="row">
-							<div class="col-md-9">
-								<p class="form-headings">Adults:</p>
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Room Type:</p>
+									<select class="form-control" name="roomtype">
+										<option>Deluxe</option>
+										<option>Standard Double</option>
+										<option>Twin room</option>
+										<option>Single room</option>
+									</select>
+								</div>
 							</div>
-							<div class="col-md-3">
-								<select class="form-control">
+							<div class="col-md-6">
+								<div class="form-group">
+									<p class="form-headings">Occupancy:</p>
+									<select class="form-control" name="occupancy">
+										<option>Double occupancy</option>
+										<option>Single occupancy</option>
+									</select>
+								</div>
+							</div>
+						</div> 
+						<div class="row">
+							<div class="col-md-6">
+								<p class="form-headings">Adults:</p>
+								<select class="form-control" name="adults">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
 									<option>4</option>
 									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
 								</select>
 							</div>
-						</div>
-						<div class="row"><hr style="width: 90%"></div>
-						<div class="row">
-							<div class="col-md-9">
+							<div class="col-md-6">
 								<p class="form-headings">Children:</p>
-							</div>
-							<div class="col-md-3">
-								<select class="form-control">
+								<select class="form-control" name="children">
 									<option>0</option>
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
 									<option>4</option>
 									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
 								</select>
 							</div>
 						</div>
-						<div class="row"><hr style="width: 90%"></div>
 						<div class="row">
 							<div class="col-md-12">
-								<p><strong>Rates per day:</strong></p>
-								<p>Double = UGX 222,222</p>
-								<p>Single = UGX 111,111</p>
-							</div>
+								<%= submit_tag 'Book Now', class: "btn btn-4 btn-block" %>
+							</div>							
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<button type="submit" class="btn btn-4 btn-block" name="btnDone" id="btnDone">Check rooms and rates</button>
-							</div>
-						</div>                                 
-					</div> <!-- End of centered col -->
+					</div> 
 				</div>
-			</form>
+			<% end %>
+		</div>		
+	</div>
+	<div class="row tocs">
+		<div class="col-sm-12">
+			<p>
+				<a data-toggle="collapse" href="#collapseTOCs" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Read Terms and Conditions
+				</a>
+			</p>
+			<div class="collapse" id="collapseTOCs">
+				<div class="card card-body">
+					<p>Children and extra beds</p>
+					<ul>
+						<li>One child may stay free of charge when using existing bedding.</li>
+						<li>One child may stay at the price of 50 % of the room stay per person per night in an extra bed.</li>
+						<li>Older children/adults may stay at the price of 100 % of the room stay per person per night in an extra bed.</li>
+						<li>There are no cribs provided in a room</li>
+					</ul>
+
+					<p>All prices are Per Room Per Night inclusive of Bed &amp; Breakfast</p>
+					
+					<p>Exchange rate: UGX 3600 for USD 1 and USD 1 for UGX 3500</p>
+					
+					<p>Check-in: from 10:00-22:00 hours</p>
+					
+					<p>Check-out: until 10:00 hours</p>
+
+					<p><i>Stay with us Feel like Family</i></p>
+				</div>
+			</div>
 		</div>
-		<div class="col-sm-4 box-item"></div> <!-- To help centre the form -->
 	</div>
 </div>
 
 <!-- ABOUT -->
 <div class="container-fluid about-section largepadding" id="about">
 	<div class="body-card">
-		<h1 class="brown">Our Story</h1>
-		<p>Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there--on a mote of dust suspended in a sunbeam.</p>
+		<div class="row">
+			<div class="col-sm-6">
+				<h1 class="brown">Our Story</h1>
+				<p>For the lovers of sounds of birds humming in the trees, wind in the trees and green lawns yet you need to be close to the action then Sheevys BNB is for you. </p>
 
-		<p>It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.</p>
-		<h3>For Booking, don't hesitate to reach out. We're available everyday all day</h3>
-		<a class="linkbutton" href="tel:+256752755899">CALL: 0752-755-899</a>    
+				<p>Conveniently located 3.48kms on Kasese road from Fort Portal town Sheevys is an ideal and pleasant place for both travelers both on leisure or business. Town is just 10 minutes away where there is a good selection of banks, churches, hairdressers, supermarkets, shops and excellent restaurants. For golf lovers the golf course can be accessed easily and night life Mountains of the moon bar and Africana bar are also nearby.</p>
+				
+				<p>Sheevys BNB has easy access to most Kabarole local attractions which can be easily done as a day trip from our BNB. Or on arrangement with our in house Tour guide who can take you on the Ruwenzori region experience with our available itinerary and added cost.</p>
+			</div>			
+			<div class="col-sm-6">
+				<h1 class="brown">Our Offer</h1>
+		
+				<p>In addition to a tranquil setting we pride ourselves of maintaining our high standards. We and our staffs like people and we go an extra mile to make our guests feel at home. And get that wow experience.</p>
+
+				<p>Our rates include bed and breakfast.
+				The rooms are just as impressive as the communal areas. Tile floors/carpeted floor support comfortable warm beds and each room boasts a walk-in shower or bathtub with both warm and cold water. </p>
+				
+				<p>The hotel has a swimming pool, sauna and steam bath. There’s also a mini spa and spa services can be arranged on request. We use natural and local ingredients as well as products made with honey, avocados all bought locally from the local village. We provide friendly professional</p>				
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-sm-12 centered">
+				<h3>For Booking, don't hesitate to reach out. We're available everyday all day</h3>
+			
+				<a class="linkbutton" href="tel:+256752755899">CALL: 0752-755-899</a>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -125,7 +252,13 @@
 <div class="container-fluid amenities-section largepadding dark" id="amenities">
 	<h1 class="white">Amenities</h1>
 	<h3>Get even more than you expected</h3>
-	<p>All our rooms come with great amenities and services. The following are just a few of the main amenities included by default with our rooms.</p>
+
+	<p>Sheevys offers some of the expected modern amenities including Wireless Internet access, Mini bar and Bed &amp; Breakfast.</p>
+
+	<p>The facility has an overlooking amazing garden a mini bar and meals offered on alacarte. A complimentary shuttle that drops and picks guests to CBD from 09am to 05pm.</p>
+
+	<p>The hotel has a swimming pool, sauna and steam bath. There’s also a mini spa and spa services can be arranged on request. We use natural and local ingredients as well as products made with honey, avocados all bought locally from the local village. We provide friendly professional</p>
+
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="row">
@@ -187,16 +320,34 @@
 </div>
 
 
-<!-- ...more Amenities: Breakfast -->
+<!-- Facilities -->
 <div class="breakfast-section">
-	<div class="row">
-		<div class="col-sm-6 nopadding">
-			<%= image_tag "breakfast.jpg" %>
+	<div class="row d-flex h-100">
+		<div class="col-sm-6 justify-content-center align-self-center" style="padding: 50px">
+			<h2>Facilities</h2>
+
+			<p>Breakfast room Lounge and large covered patio. Huge garden with rolling lawns and magnificent trees Wireless internet access throughout the property ample parking at the property. Guard on duty overnight at the guesthouse.</p>
 		</div>
-		<div class="col-sm-6" style="padding: 50px">
-			<h2>Breakfast</h2>  
-			<p>Are you looking to surprise that special someone with a romantic getaway, or would you like to indulge in a culinary feast until the sun goes down, maybe you'd like to unwind while enjoying an amazing bike ride through our scenic route? We're now offering special arrangements that take leisure to a whole other level.</p>
-			<p>It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.</p>
+		<div class="col-sm-6 nopadding">
+			<%= image_tag "gallery/16.jpg" %>
+		</div>
+	</div>
+</div>
+
+<!-- ...Attractions -->
+<div class="breakfast-section">
+	<div class="row d-flex h-100">
+		<div class="col-sm-6 nopadding">
+			<%= image_tag "attractions.jpg" %>
+		</div>
+		<div class="col-sm-6 justify-content-center align-self-center" style="padding: 50px">
+			<h2>Attractions</h2>
+
+			<p><i>Our tour guide explaining various bird species to a customer</i></p>
+
+			<p>Unique setting. The property has a rolling lawn and magnificent trees set the country-like atmosphere. Ultra convenient location. The Toro Golf course is 4km away.  Chimpanzee tracking, Toro Kingdom palace, Royal Tombs, Amabere, Mountain hiking, and several crater lakes are some other attractions within 20 to 40minutes drive.</p>
+
+			<p>Sheevys is about 10 minutes from both the Fort Portal town. There are markets, supermarkets   restaurants, a golf course and gyms close by.</p>
 		</div>
 	</div>
 </div>
@@ -206,18 +357,57 @@
 <div class="container-fluid rooms-section largepadding dark" id="rooms">
 	<h1 class="white">The Rooms</h1>
 	<h3>We offer the best Rooms with a wide array of complimentary wonders</h3>
-	<p class="light">+ Mosquito Nets, Towels, Bed-side lamp, Carpet, ...</p>
+	
+	<p class="greydescription">The rooms are just as remarkable as the shared areas. Tile floors / carpeted floor support comfortable warm beds and each room boasts a walk-in shower with both warm and cold water.</p>
+
+	<p class="greydescription">King Queen and Twin beds are available. Rooms, tiled/-carpet heating,tea/coffee stations in Deluxe Room, free, wireless internet access.</p>
+
 </div>
 <!-- ...room photo and details -->
 <div class="room-example">
-	<div class="row">
-		<div class="col-sm-6 nopadding">
-			<%= image_tag "room.jpg" %>
+	<div class="row d-flex h-100">
+		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
+			<h2>DELUXE ROOM</h2>  		
+			<p>Our lovely spacious room with a king size bed and an ensuite bathroom. The room has the view of our beautiful garden.</p>	
 		</div>
-		<div class="col-sm-6" style="padding: 30px">
-			<h2>Sleep like a King</h2>  
-			<p>Our Room is fully equiped with all sorts of niceties for your comfort</p>
-			<p>Lorem Ipsum. It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.</p>
+		<div class="col-sm-8 nopadding">
+			<%= image_tag "rooms/deluxe1.jpg" %>
+		</div>
+	</div>
+</div>
+<!-- ...room photo and details -->
+<div class="room-example">
+	<div class="row d-flex h-100">
+		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
+			<h2>STANDARD DOUBLE ROOM</h2>
+			<p>Has a queen size bed have an en-suite spacious bathroom a reading table and in built wardrobes</p>
+		</div>
+		<div class="col-sm-8 nopadding">
+			<%= image_tag "rooms/standard_double1.jpg" %>
+		</div>
+	</div>
+</div>
+<!-- ...room photo and details -->
+<div class="room-example">
+	<div class="row d-flex h-100">
+		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
+			<h2>SINGLE ROOM</h2>
+			<p>Has one single bed but can be shared. Also has a spacious en-suite bathroom.</p>
+		</div>
+		<div class="col-sm-8 nopadding">
+			<%= image_tag "rooms/single1.jpg" %>
+		</div>
+	</div>
+</div>
+<!-- ...room photo and details -->
+<div class="room-example">
+	<div class="row d-flex h-100">
+		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
+			<h2>TWIN ROOM</h2>
+			<p>Has two single comfortable beds but can be shared with a reading table in built wardrobe. A very spacious bathroom but not en-suite</p>
+		</div>
+		<div class="col-sm-8 nopadding">
+			<%= image_tag "rooms/twin.jpg" %>
 		</div>
 	</div>
 </div>
@@ -227,7 +417,7 @@
 <div class="container-fluid location-section largepadding dark" id="feedback">
 	<h1 class="white">Feedback</h1>
 	<h3>Tell us about your experience here</h3>
-	<p class="light">What did you like? What didn't you like?</p>
+	<p class="greydescription">What did you like? What didn't you like?</p>
 </div>
 <div class="container-fluid location-section largepadding">
 	<div class="row form-row">
@@ -323,8 +513,8 @@
 <!-- LOCATION -->
 <div class="container-fluid location-section largepadding dark" id="location">
 	<h1 class="white">Location</h1>
-	<h3>It's never been easier to find us</h3>
-	<p class="light">Google Map</p>
+	<h3>Sheevys is about 10 minutes from both the Fort Portal town. There are markets, supermarkets   restaurants, a golf course and gyms close by.</h3>
+	<p class="greydescription">Google Map</p>
 
 	<div class="map-responsive">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.69738184958993!2d30.263039035764688!3d0.6274849638796907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1763d0c564cbfa2d%3A0xb20e45f3a713c552!2sSheevy&#39;s+Bed+%26+Breakfast!5e0!3m2!1sen!2sug!4v1521737815793" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
