@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   
   def home
+    protect_from_forgery with: :null_session #Turn off CSRF token
+
   	@carousel_items = {
 		"image1" => {
 			"classes": "carousel-item active",
