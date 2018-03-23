@@ -88,7 +88,7 @@ Rails.application.configure do
 
 
   #https://sleepy-basin-13130.herokuapp.com/
-  config.action_mailer.default_url_options = { host: 'https://sleepy-basin-13130.herokuapp.com', protocol: 'http' }
+  #config.action_mailer.default_url_options = { host: 'https://sleepy-basin-13130.herokuapp.com', protocol: 'http' }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
@@ -99,9 +99,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
-   :user_name            => ENV['gmail_username'],
-   :password             => ENV['gmail_password'],
+   :user_name            => 'sheevys.bnb@gmail.com', #ENV['gmail_username'],
+   :password             => '5h33vyz.bnb', #ENV['gmail_password'],
    :authentication       => "plain",
    :enable_starttls_auto => true
  }
 end
+  
