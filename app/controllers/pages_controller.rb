@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
   
-  require 'mail' #mail gem
-
   def home
   	@carousel_items = {
 		"image1" => {
@@ -17,6 +15,13 @@ class PagesController < ApplicationController
 			"subheading": "Each member of our team strives to make our guests feel at home and we look forward to welcoming you to our piece of paradise in beautiful Tooro."
 		}
 	}
+
+
+    if params[:commit] == "Book Now" #Book Now button submitted
+        puts "Clicked"
+        FormMailer.send_email.deliver
+        redirect_to home_path, notice: 'Your Booking information was sent'
+    end
   end
 
   def gallery
@@ -30,7 +35,5 @@ class PagesController < ApplicationController
   	if @image_files.size % 4 > 0
   		@image_rows += 1
   	end
-  	p "IMAGE ROWS = #{@image_rows}"
-  	p "**" * 22
   end
 end
