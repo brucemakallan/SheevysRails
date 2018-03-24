@@ -1,0 +1,23 @@
+<div class="headings">Full-Name:</div> 
+<%= @email.fullname %><br>
+
+<div class="headings">Phone:</div> 
+<%= @email.phone %><br>
+
+<div class="headings">Check-in date:</div> 
+<%= Date.strptime(@email.datein, '%Y-%m-%d').strftime("%d %b %Y") %><br>
+
+<div class="headings">Check-out date:</div> 
+<%= Date.strptime(@email.dateout, '%Y-%m-%d').strftime("%d %b %Y") %><br>
+
+<div class="headings">Room Type:</div> 
+<%= @email.roomtype %><br>
+
+<div class="headings">Occupancy:</div> 
+<%= @email.occupancy %><br>
+
+<div class="headings">Number of Adults:</div> 
+<%= @email.adults %><br>
+
+<div class="headings">Number of Children:</div> 
+<%= @email.children %><br>

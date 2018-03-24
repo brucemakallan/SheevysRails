@@ -3,16 +3,17 @@ class FormMailer < ApplicationMailer
 
 	layout "mailer"
 
-	def send_email(name:, phone:, datein:, dateout:, roomtype:, occupancy:, adults:, children:)
-		mail(to: "makallancg2@gmail.com", 
-			subject: 'New Sheevys Booking', 
-			body: "Full name: #{name}<br>
-			Phone #{phone}<br>
-			Check-in Date #{datein}<br>
-			Check-out Date #{dateout}<br>
-			Room-Type #{roomtype}<br>
-			Occupancy #{occupancy}<br>
-			Adults #{adults}<br>
-			Children #{children}")
+	def send_email(email)
+		@email = email
+		mail(to: "makallancg2@gmail.com", subject: "New Sheevys Booking")			
 	end
 end
+
+# body: "Full name: #{email.fullname}
+# 			Phone #{email.phone}
+# 			Check-in Date #{email.datein}
+# 			Check-out Date #{email.dateout}
+# 			Room-Type #{email.roomtype}
+# 			Occupancy #{email.occupancy}
+# 			Adults #{email.adults}
+# 			Children #{email.children}")

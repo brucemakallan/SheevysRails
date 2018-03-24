@@ -20,8 +20,9 @@ class PagesController < ApplicationController
 
 
     if params[:commit] == "Book Now" #Book Now button submitted
-      puts "Book Now sClicked"
-      FormMailer.send_email(name: params['fullname'], phone: params['phone'], datein: params['checkin'], dateout: params['checkout'], roomtype: params['roomtype'], occupancy: params['occupancy'], adults: params['adults'], children: params['children']).deliver
+      puts "Book Now Clicked"
+      @email = Email.new(fullname: params['fullname'], phone: params['phone'], datein: params['checkin'], dateout: params['checkout'], roomtype: params['roomtype'], occupancy: params['occupancy'], adults: params['adults'], children: params['children'])
+      FormMailer.send_email(@email).deliver
       redirect_to home_path, notice: 'Your Booking information was sent'
     end
   end
