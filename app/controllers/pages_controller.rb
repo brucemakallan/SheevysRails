@@ -4,25 +4,25 @@ class PagesController < ApplicationController
   
   def home
     @carousel_items = {
-		"image1" => {
-			"classes": "carousel-item active",
-			"image_url": "carousel/001.jpg",
-			"heading": "Sheevy's Bed and Breakfast",
-			"subheading": "Each member of our team strives to make our guests feel at home and we look forward to welcoming you to our piece of paradise in beautiful Tooro."
-		},
-		"image2" => {
-			"classes": "carousel-item",
-			"image_url": "carousel/002.jpg",
-			"heading": "Sheevy's Bed and Breakfast",
-			"subheading": "Each member of our team strives to make our guests feel at home and we look forward to welcoming you to our piece of paradise in beautiful Tooro."
-		}
-	}
+  		"image1" => {
+  			"classes": "carousel-item active",
+  			"image_url": "carousel/001.jpg",
+  			"heading": "Sheevy's Bed and Breakfast",
+  			"subheading": "Each member of our team strives to make our guests feel at home and we look forward to welcoming you to our piece of paradise in beautiful Tooro."
+  		},
+  		"image2" => {
+  			"classes": "carousel-item",
+  			"image_url": "carousel/002.jpg",
+  			"heading": "Sheevy's Bed and Breakfast",
+  			"subheading": "Each member of our team strives to make our guests feel at home and we look forward to welcoming you to our piece of paradise in beautiful Tooro."
+  		}
+	  }
 
 
     if params[:commit] == "Book Now" #Book Now button submitted
-        puts "Clicked"
-        FormMailer.send_email.deliver
-        redirect_to home_path, notice: 'Your Booking information was sent'
+      puts "Book Now sClicked"
+      FormMailer.send_email(name: params['fullname'], phone: params['phone'], datein: params['checkin'], dateout: params['checkout'], roomtype: params['roomtype'], occupancy: params['occupancy'], adults: params['adults'], children: params['children']).deliver
+      redirect_to home_path, notice: 'Your Booking information was sent'
     end
   end
 
