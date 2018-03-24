@@ -429,7 +429,7 @@
 	<div class="row form-row">
 		<div class="col-sm-3 box-item"></div> <!-- To help centre the form -->
 		<div class="col-sm-6">
-			<form name="form1" method="post" action="">
+			<%= form_tag "home", name: "form1" do %>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
@@ -460,34 +460,34 @@
 									<p class="form-headings">Rating [From Terrible to Great]</p>
 									<div class="row radio">
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">1</p>
+											<p><input type="radio" value="1" name="rating">1</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">2</p>
+											<p><input type="radio" value="2" name="rating">2</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">3</p>
+											<p><input type="radio" value="3" name="rating">3</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">4</p>
+											<p><input type="radio" value="4" name="rating">4</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">5</p>
+											<p><input type="radio" value="5" name="rating">5</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">6</p>
+											<p><input type="radio" value="6" name="rating">6</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">7</p>
+											<p><input type="radio" value="7" name="rating">7</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">8</p>
+											<p><input type="radio" value="8" name="rating">8</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">9</p>
+											<p><input type="radio" value="9" name="rating">9</p>
 										</div>
 										<div class="col-md-1">
-											<p><input type="radio" name="rating">10</p>
+											<p><input type="radio" value="10" name="rating">10</p>
 										</div>
 										<div class="col-md-2"></div>
 									</div>
@@ -504,12 +504,12 @@
 						</div>   
 						<div class="row">
 							<div class="col-md-12">
-								<button type="submit" class="btn btn-4 btn-block" name="btnDone" id="btnDone">Send Feedback</button>
+								<%= submit_tag 'Send Feedback', class: "btn btn-4 btn-block" %>
 							</div>
 						</div>                                 
 					</div> <!-- End of centered col -->
 				</div>
-			</form>
+			<% end %>
 		</div>
 		<div class="col-sm-3 box-item"></div> <!-- To help centre the form -->
 	</div>

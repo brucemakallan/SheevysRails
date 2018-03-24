@@ -3,9 +3,16 @@ class FormMailer < ApplicationMailer
 
 	layout "mailer"
 
+	@to_email_address = "makallancg2@gmail.com"
+
 	def send_email(email)
 		@email = email
-		mail(to: "makallancg2@gmail.com", subject: "New Sheevys Booking")			
+		mail(to: @to_email_address, subject: "New Sheevys Booking")			
+	end
+
+	def send_feedback(feedback)
+		@feedback = feedback
+		mail(to: @to_email_address, subject: "Sheevys Feedback")
 	end
 end
 

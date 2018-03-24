@@ -1,0 +1,16 @@
+<div class="headings">Full-Name:</div> 
+<%= @feedback.fullname %><br>
+
+<div class="headings">Email:</div> 
+<%= @feedback.email %><br>
+
+<div class="headings">Time of Stay:</div> 
+<%= Date.strptime(@feedback.timeofstay, '%Y-%m-%d').strftime("%d %b %Y") %><br>
+
+<div class="headings">Rating:</div> 
+<%= @feedback.rating %> / 10<br>
+
+<hr>
+
+<div class="headings">Notes:</div> 
+<%= @feedback.notes %><br>

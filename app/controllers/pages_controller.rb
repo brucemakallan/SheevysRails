@@ -25,6 +25,13 @@ class PagesController < ApplicationController
       FormMailer.send_email(@email).deliver
       redirect_to home_path, notice: 'Your Booking information was sent'
     end
+
+    if params[:commit] == "Send Feedback"
+      puts "Send Feedback Clicked"
+      @feedback = FeedbackMail.new(fullname: params['fullname'], email: params['email'], timeofstay: params['timeofstay'], rating: params['rating'], notes: params['notes'])
+      FormMailer.send_feedback(@feedback).deliver
+      redirect_to home_path, notice: 'Your Feedback information was sent'
+    end
   end
 
   def gallery

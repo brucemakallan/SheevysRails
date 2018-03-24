@@ -1,0 +1,3 @@
+class FeedbackMail < ApplicationRecord
+
+end
