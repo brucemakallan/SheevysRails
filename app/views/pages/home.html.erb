@@ -35,160 +35,46 @@
 </div>    
 
 <% unless notice.nil? %>
-	<%= tag.div class: "alert alert-success centered" do %>
-		<%= notice %>
+	<%= tag.div class: "alert alert-success alert-dismissible centered alert-msg" do %>
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+  		<%= notice %>
 	<% end %>
 <% end %>
 
+
 <div class="container-fluid booking-section">
 	<div class="row form-row d-flex h-100">
-		<div class="col-sm-6 tariffs">
-			<div class="row">
-				<div class="col-sm-12 centered">
-					<h3>Accommodation Tariff</h3>	
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Room Type</th>
-								<th>Double occupancy</th>
-								<th>Single occupancy</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Deluxe</td>
-								<td>USD 70</td>
-								<td>USD 50</td>
-							</tr>
-							<tr>
-								<td>Standard Double</td>
-								<td>USD 60</td>
-								<td>USD 55</td>
-							</tr>
-							<tr>
-								<td>Twin room</td>
-								<td>USD 50</td>
-								<td>USD 45</td>
-							</tr>
-							<tr>
-								<td>Single room</td>
-								<td>USD 45</td>
-								<td>USD 40</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div> 
-
-		<div class="col-sm-6">  <!-- justify-content-center align-self-center -->
+		<div class="col-sm-12">
 			<%= form_tag "home", name: "form1" do %>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
-							<div class="col-sm-12 centered">
-								<h3>Booking Form</h3>	
-							</div>
-						</div>	
-
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<p class="form-headings">Full Name:</p>
-									<input type="text" class="form-control input-lg" name="fullname" id="fullname" required="required">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<p class="form-headings">Phone:</p>
-									<input type="text" class="form-control input-lg" name="phone" id="phone" required="required">
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
+							<div class="col-sm-3"></div>
 							<!-- Check in -->
-							<div class="col-md-6">
+							<div class="col-md-2">
 								<div class="form-group">
 									<p class="form-headings">Check-in date:</p>
 									<input type="date" class="form-control input-lg" name="checkin" id="checkin" required="required">
 								</div>
 							</div>
 							<!-- Check out date -->
-							<div class="col-md-6">
+							<div class="col-md-2">
 								<div class="form-group">
 									<p class="form-headings">Check-out date:</p>
 									<input type="date" class="form-control input-lg" name="checkout" id="checkout" required="required">
 								</div>
 							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<p class="form-headings">Room Type:</p>
-									<select class="form-control" name="roomtype">
-										<option>Deluxe</option>
-										<option>Standard Double</option>
-										<option>Twin room</option>
-										<option>Single room</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<p class="form-headings">Occupancy:</p>
-									<select class="form-control" name="occupancy">
-										<option>Single occupancy</option>
-										<option>Double occupancy</option>
-									</select>
-								</div>
-							</div>
-						</div> 
-						<div class="row">
-							<div class="col-md-6">
-								<p class="form-headings">Adults:</p>
-								<select class="form-control" name="adults">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>7</option>
-									<option>8</option>
-								</select>
-							</div>
-							<div class="col-md-6">
-								<p class="form-headings">Children:</p>
-								<select class="form-control" name="children">
-									<option>0</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>7</option>
-									<option>8</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<%= submit_tag 'Book Now', class: "btn btn-4 btn-block" %>
-							</div>							
+							<div class="col-md-2">
+								<%= submit_tag 'Check Availability', class: "btn btn-4 btn-block" %>
+							</div>			
+							<div class="col-sm-3"></div>				
 						</div>
 					</div> 
 				</div>
 			<% end %>
 		</div>		
 	</div>
-	<div class="row tocs">
+	<!-- <div class="row tocs">
 		<div class="col-sm-12">
 			<p>
 				<a data-toggle="collapse" href="#collapseTOCs" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -217,7 +103,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 
 <!-- ABOUT -->
@@ -358,62 +244,16 @@
 	</div>
 </div>
 
+<!-- Tour -->
+<div class="breakfast-section">
+	<div class="row d-flex h-100">
+		<div class="col-sm-6 justify-content-center align-self-center" style="padding: 50px">
+			<h2>Scenic Tour</h2>
 
-<!-- ROOMS SECTION -->
-<div class="container-fluid rooms-section largepadding dark" id="rooms">
-	<h1 class="white">The Rooms</h1>
-	<h3>We offer the best Rooms with a wide array of complimentary wonders</h3>
-	
-	<p class="greydescription">The rooms are just as remarkable as the shared areas. Tile floors / carpeted floor support comfortable warm beds and each room boasts a walk-in shower with both warm and cold water.</p>
-
-	<p class="greydescription">King Queen and Twin beds are available. Rooms, tiled/-carpet heating,tea/coffee stations in Deluxe Room, free, wireless internet access.</p>
-
-</div>
-<!-- ...room photo and details -->
-<div class="room-example">
-	<div class="row d-flex h-100">
-		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
-			<h2>DELUXE ROOM</h2>  		
-			<p>Our lovely spacious room with a king size bed and an ensuite bathroom. The room has the view of our beautiful garden.</p>	
+			<p><i>Our tour guide with one of our guests</i></p>
 		</div>
-		<div class="col-sm-8 nopadding">
-			<%= image_tag "rooms/deluxe1.jpg" %>
-		</div>
-	</div>
-</div>
-<!-- ...room photo and details -->
-<div class="room-example">
-	<div class="row d-flex h-100">
-		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
-			<h2>STANDARD DOUBLE ROOM</h2>
-			<p>Has a queen size bed have an en-suite spacious bathroom a reading table and in built wardrobes</p>
-		</div>
-		<div class="col-sm-8 nopadding">
-			<%= image_tag "rooms/standard_double1.jpg" %>
-		</div>
-	</div>
-</div>
-<!-- ...room photo and details -->
-<div class="room-example">
-	<div class="row d-flex h-100">
-		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
-			<h2>SINGLE ROOM</h2>
-			<p>Has one single bed but can be shared. Also has a spacious en-suite bathroom.</p>
-		</div>
-		<div class="col-sm-8 nopadding">
-			<%= image_tag "rooms/single1.jpg" %>
-		</div>
-	</div>
-</div>
-<!-- ...room photo and details -->
-<div class="room-example">
-	<div class="row d-flex h-100">
-		<div class="col-sm-4 justify-content-center align-self-center" style="padding: 30px">
-			<h2>TWIN ROOM</h2>
-			<p>Has two single comfortable beds but can be shared with a reading table in built wardrobe. A very spacious bathroom but not en-suite</p>
-		</div>
-		<div class="col-sm-8 nopadding">
-			<%= image_tag "rooms/twin.jpg" %>
+		<div class="col-sm-6 nopadding">
+			<%= image_tag "tour.jpg" %>
 		</div>
 	</div>
 </div>
@@ -515,45 +355,3 @@
 	</div>
 </div>
 
-
-<!-- LOCATION -->
-<div class="container-fluid location-section largepadding dark" id="location">
-	<h1 class="white">Location</h1>
-	<h3>Sheevys is about 10 minutes from both the Fort Portal town. There are markets, supermarkets   restaurants, a golf course and gyms close by.</h3>
-	<p class="greydescription">Google Map</p>
-
-	<div class="map-responsive">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.69738184958993!2d30.263039035764688!3d0.6274849638796907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1763d0c564cbfa2d%3A0xb20e45f3a713c552!2sSheevy&#39;s+Bed+%26+Breakfast!5e0!3m2!1sen!2sug!4v1521737815793" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-	</div>
-</div>
-
-
-<!-- CONTACTS -->
-<div class="container-fluid contacts-section largepadding grey" id="contacts">
-	<h1>Contacts</h1>
-	<h3>Feel free to Reach Out</h3>
-	<p>Including 24hr Help and Support via our Telephone Contact</p>
-	<div class="row">
-		<div class="col-sm-3">
-			<%= image_tag "logo.png", height: 120 %>
-		</div>
-		<div class="col-sm-3">
-			<a href="#rooms">rooms</a><br>
-			<a href="#amenities">amenities</a><br>
-			<a href="gallery.html">gallery</a><br>
-			<a href="#location">location</a><br>
-		</div>
-		<div class="col-sm-3">
-			<h4>Address</h4>
-			<p>Fortportal-Kasese Road,</p>
-			<p>Fort Portal,</p>
-			<p>Uganda.</p>
-			<p><a href="tel:+256752755899">0752-755-899</a></p>
-		</div>
-		<div class="col-sm-3">
-			<h4>Business Hours</h4>
-			<p>MON - SUN</p>
-			<p>Open 24 Hours</p>
-		</div>
-	</div>
-</div>

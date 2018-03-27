@@ -102,6 +102,7 @@ small {
 	color: white;
 }
 
+
 /*Nav bar*/
 .navbar-section {
 	
@@ -127,6 +128,11 @@ small {
 .belownav {
 	margin-top: 76px;
 }
+.alert-msg {
+	position: fixed;
+	z-index: 10;
+	top: 90px;
+}
 
 /*Carousel*/
 .carousel-inner img { /* Make the image fully responsive */
@@ -144,7 +150,7 @@ small {
 	margin-top: 10px;
 
 	.btn {
-		margin-top: 20px;
+		margin-top: 27px;
 	}
 }
 .booking-heading {

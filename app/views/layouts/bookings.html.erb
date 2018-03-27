@@ -57,47 +57,14 @@
 			</nav>
 		</div>
 
+		<div class="belownav"></div>
 
 		<!-- The rest of the body is inserted here -->
 		<%= yield %>
-
-
-		<!-- CONTACTS -->
-		<div class="container-fluid contacts-section largepadding grey" id="contacts">
-			<h1>Contacts</h1>
-			<h3>Feel free to Reach Out</h3>
-			<p>Including 24hr Help and Support via our Telephone Contact</p>
-			<div class="row">
-				<div class="col-sm-3">
-					<%= image_tag "logo.png", height: 120 %>
-				</div>
-				<div class="col-sm-3">
-					<%= link_to 'rooms', rooms_path %><br>
-					<%= link_to 'amenities', home_path+"#amenities" %><br>
-					<%= link_to 'gallery', gallery_path %><br>
-					<%= link_to 'location', location_path %>
-				</div>
-				<div class="col-sm-3">
-					<h4>Address</h4>
-					<p>Fortportal-Kasese Road,</p>
-					<p>Fort Portal,</p>
-					<p>Uganda.</p>
-					<p><a href="tel:+256752755899">0752-755-899</a></p>
-				</div>
-				<div class="col-sm-3">
-					<h4>Business Hours</h4>
-					<p>MON - SUN</p>
-					<p>Open 24 Hours</p>
-				</div>
-			</div>
-		</div>
-
 
 		<footer>
 			<p>&copy; <%= Time.new.year %> All Rights Reserved. Sheevy's Bed &amp; Breakfast</p>
 		</footer>
 	</div>
-
-	<%= javascript_include_tag 'gallery' %>
 </body>
 </html>
