@@ -24,7 +24,11 @@
 		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Dashboard</a>
 		<ul class="navbar-nav px-3">
 			<li class="nav-item text-nowrap">
-				<a class="nav-link" href="#">Sign out</a>
+				<% if current_user %>
+					<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signoutlink" %>
+				<% else %>	
+					<% controller.redirect_to new_user_session_path %>
+				<% end %>
 			</li>
 		</ul>
 	</nav>
@@ -47,7 +51,7 @@
 				</div>
 			</nav>
 
-			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 padding-bottom">
 				
 				<%= yield %>
 

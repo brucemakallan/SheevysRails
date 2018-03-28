@@ -1,42 +1,87 @@
 <%= form_with(model: booking, local: true) do |form| %>
-  <% if booking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+<% if booking.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
 
-      <ul>
-      <% booking.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% booking.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="entry-section card card-body">
+      <div class="field form-group">
+        <%= form.label :booking_date %><br>
+        <%= form.text_field :booking_date, id: :booking_booking_date, type: "date", required: "required", class: "form-control" %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :booking_date %>
-    <%= form.text_field :booking_date, id: :booking_booking_date, type: "date", required: "required" %>
+
+    <div class="entry-section card card-body">
+      <div class="field form-group">
+        <%= form.label :deluxe_room %>
+        <%= form.check_box :deluxe_room, id: :booking_deluxe_room %>
+      </div>
+      <div class="field form-group">
+        Name &amp; Contact of Booker<br>
+        <%= form.text_field :deluxebooker, id: :booking_deluxebooker, class: "form-control" %>
+      </div>
+    </div>
+
+
+    <div class="entry-section card card-body">
+      <div class="field form-group">
+        <%= form.label :double_room %>
+        <%= form.check_box :double_room, id: :booking_double_room %>
+      </div>
+      <div class="field form-group">
+        Name &amp; Contact of Booker<br>
+        <%= form.text_field :doublebooker, id: :booking_doublebooker, class: "form-control" %>
+      </div>
+    </div>
+
+
+    <div class="entry-section card card-body">
+      <div class="field form-group">
+        <%= form.label :single_room %>
+        <%= form.check_box :single_room, id: :booking_single_room %>
+      </div>
+      <div class="field form-group">
+        Name &amp; Contact of Booker<br>
+        <%= form.text_field :singlebooker, id: :booking_singlebooker, class: "form-control" %>
+      </div>
+    </div>
+
+
+    <div class="entry-section card card-body">
+      <div class="field form-group">
+        <%= form.label :twin_room %>
+        <%= form.check_box :twin_room, id: :booking_twin_room %>
+      </div>
+      <div class="field form-group">
+        Name &amp; Contact of Booker<br>
+        <%= form.text_field :twinbooker, id: :booking_twinbooker, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :deluxe_room %>
-    <%= form.check_box :deluxe_room, id: :booking_deluxe_room %>
+  <div class="col-sm-6"></div>
+</div>
+
+<div class="row margin-top">
+  <div class="col-sm-6">
+    <p style="color: #640000">* Rember to provide a booker's name for every checked room and viseversa</p>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-4 btn-block margin-top" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :double_room %>
-    <%= form.check_box :double_room, id: :booking_double_room %>
-  </div>
+  <div class="col-sm-6"></div>
+</div>
 
-  <div class="field">
-    <%= form.label :single_room %>
-    <%= form.check_box :single_room, id: :booking_single_room %>
-  </div>
-
-  <div class="field">
-    <%= form.label :twin_room %>
-    <%= form.check_box :twin_room, id: :booking_twin_room %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

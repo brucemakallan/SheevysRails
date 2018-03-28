@@ -5,6 +5,12 @@ body {
 	font-size: .875rem;
 }
 
+.signoutlink {
+	color: white;
+}
+.signoutlink:hover {
+	color: aqua;
+}
 #notice {
 	padding: 10px;
 	border-radius: 10px;
@@ -12,11 +18,16 @@ body {
 	font-size: 22px;
 	color: #006400;
 }
-
 .feather {
 	width: 16px;
 	height: 16px;
 	vertical-align: text-bottom;
+}
+.margin-top {
+	margin-top: 30px;
+}
+.padding-bottom {
+	padding-bottom: 30px;
 }
 
 /*

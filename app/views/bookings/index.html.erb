@@ -10,7 +10,6 @@
       <th>Double room</th>
       <th>Single room</th>
       <th>Twin room</th>
-      <th>Show</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -22,33 +21,37 @@
         <td><%= booking.booking_date %></td>
         <td>
           <% if booking.deluxe_room %>
-            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span><br>
+            <!-- Show booker if booked -->
+            <%= booking.deluxebooker %>
           <% else %>
             <span style="color: green;">Available</span>
           <% end %>
         </td>
         <td>
           <% if booking.double_room %>
-            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span><br>
+            <%= booking.doublebooker %>
           <% else %>
             <span style="color: green;">Available</span>
           <% end %>
         </td>
         <td>
           <% if booking.single_room %>
-            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span><br>
+            <%= booking.singlebooker %>
           <% else %>
             <span style="color: green;">Available</span>
           <% end %>
         </td>
         <td>
           <% if booking.twin_room %>
-            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span><br>
+            <%= booking.twinbooker %>
           <% else %>
             <span style="color: green;">Available</span>
           <% end %>
         </td>
-        <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -61,13 +64,14 @@
         <th>Double room</th>
         <th>Single room</th>
         <th>Twin room</th>
-        <th>Show</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
   </tfoot>
 </table>
 
-<br>
+<hr>
+<p style="color: #640000;">Hint: Type name of booker in search box to view only their bookings</p>
+<hr>
 
 <%= link_to '+ New Booking', new_booking_path %>

@@ -60,4 +60,8 @@ gem 'jquery-rails'
 #Font Awesome
 gem "font-awesome-rails"
 
+gem 'devise'
+
+gem 'petergate', '~> 1.8', '>= 1.8.1'
+
 ruby "2.4.0"

@@ -32,10 +32,7 @@ class PagesController < ApplicationController
     begin #For exception handling      
       if params[:commit] == "Check Availability" #Check Availability button submitted
         puts "Check Availability button Clicked"
-        # @email = Email.new(fullname: params['fullname'], phone: params['phone'], datein: params['checkin'], dateout: params['checkout'], roomtype: params['roomtype'], occupancy: params['occupancy'], adults: params['adults'], children: params['children'])
-        # FormMailer.send_email(@email).deliver
-        # redirect_to home_path, notice: 'Your Booking information was sent'
-
+        
         #Validate dates
         checkin = Date.strptime(params['checkin'], '%Y-%m-%d').strftime("%Y%m%d").to_i
         checkout = Date.strptime(params['checkout'], '%Y-%m-%d').strftime("%Y%m%d").to_i
@@ -113,6 +110,25 @@ class PagesController < ApplicationController
 
 
   def availability
+    if params[:commit] == "Book Now"
+        puts "Book Now button Clicked"
+        p "*" * 55
 
+        fullname = params['fullname']
+        phone = params['phone']
+        datein = params['checkin']
+        dateout = params['checkout']
+        occupancy = ""
+        adults = params['adults']
+        children = params['children']
+        roomtypes = "Deluxe Room: #{params['deluxe_chx']} <br>Double Room: #{params['double_chx']} <br>Twin Room: #{params['twin_chx']} <br>Single Room: #{params['single_chx']}"
+        
+        #send email
+        @email = Email.new(fullname: fullname, phone: phone, datein: datein, dateout: dateout, roomtype: roomtypes, occupancy: occupancy, adults: adults, children: children)
+        FormMailer.send_email(@email).deliver
+        
+        #redirect
+        redirect_to home_path, notice: 'Your Booking information was sent'
+    end
   end
 end
