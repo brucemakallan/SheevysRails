@@ -116,8 +116,8 @@ class PagesController < ApplicationController
 
         fullname = params['fullname']
         phone = params['phone']
-        datein = params['checkin']
-        dateout = params['checkout']
+        datein = Date.strptime($selected_dates_ar.first[:booking_date].to_s, '%Y%m%d')
+        dateout = Date.strptime($selected_dates_ar.last[:booking_date].to_s, '%Y%m%d')
         occupancy = ""
         adults = params['adults']
         children = params['children']

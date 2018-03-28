@@ -5,10 +5,10 @@
 <%= @email.phone %><br>
 
 <div class="headings">Check-in date:</div> 
-<%= Date.strptime(@email.datein, '%Y-%m-%d').strftime("%d %b %Y") %><br>
+<%= Date.strptime(@email.datein).strftime("%d %b %Y") %><br>
 
 <div class="headings">Check-out date:</div> 
-<%= Date.strptime(@email.dateout, '%Y-%m-%d').strftime("%d %b %Y") %><br>
+<%= Date.strptime(@email.dateout).strftime("%d %b %Y") %><br>
 
 <div class="headings">Room Types:</div> 
 <%= @email.roomtype %><br>

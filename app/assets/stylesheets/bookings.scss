@@ -1,4 +1,7 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Spinnaker');
+
+$spinnaker: 'Spinnaker', sans-serif;
 
 
 body {
@@ -28,6 +31,13 @@ body {
 }
 .padding-bottom {
 	padding-bottom: 30px;
+}
+.form-labels {
+	font-family: $spinnaker;
+	font-size: 15px;
+}
+.largepadding {
+	padding: 50px 15px;
 }
 
 /*

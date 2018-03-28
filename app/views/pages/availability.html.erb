@@ -101,7 +101,7 @@
 		</div> 
 
 		<div class="col-sm-6">
-			<%= form_tag "home", name: "form1" do %>
+			<%= form_tag availability_path, name: "form1" do %>
 			<div class="row margin-top">
 				<div class="col-md-12">
 					<div class="row">
@@ -163,12 +163,12 @@
 								<p class="form-headings">Room Types:</p>
 								<div class="row">
 									<div class="col-md-6">
-										<input type="checkbox" name="deluxe_chx" value="deluxe_room"> Deluxe room<br>
-										<input type="checkbox" name="double_chx" value="double_room"> Standard Double<br>
+										<input type="checkbox" name="deluxe_chx" value="1"> Deluxe room<br>
+										<input type="checkbox" name="double_chx" value="1"> Standard Double<br>
 									</div>
 									<div class="col-md-6">
-										<input type="checkbox" name="twin_chx" value="twin_room"> Twin room<br>
-										<input type="checkbox" name="single_chx" value="single_room"> Single room<br>
+										<input type="checkbox" name="twin_chx" value="1"> Twin room<br>
+										<input type="checkbox" name="single_chx" value="1"> Single room<br>
 									</div>
 								</div>
 							</div>

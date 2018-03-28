@@ -3,6 +3,10 @@ class BookingsController < ApplicationController
 
   layout "bookings"
 
+  #petergate
+  #access all: [:show, :index], user: {except: [:destroy]}, company_admin: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
   # GET /bookings
   # GET /bookings.json
   def index
