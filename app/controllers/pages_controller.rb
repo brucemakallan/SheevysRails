@@ -121,7 +121,12 @@ class PagesController < ApplicationController
         occupancy = ""
         adults = params['adults']
         children = params['children']
-        roomtypes = "Deluxe Room: #{params['deluxe_chx']} <br>Double Room: #{params['double_chx']} <br>Twin Room: #{params['twin_chx']} <br>Single Room: #{params['single_chx']}"
+
+        deluxe_rooms = params['deluxe_chx'].nil? ? 0 : 1
+        double_rooms = params['double_chx'].nil? ? 0 : 1
+        twin_rooms = params['twin_chx'].nil? ? 0 : 1
+        single_rooms = params['single_chx'].nil? ? 0 : 1
+        roomtypes = "Deluxe Room: #{deluxe_rooms},   Double Room: #{double_rooms},   Twin Room: #{twin_rooms},   Single Room: #{single_rooms}"
         
         #send email
         @email = Email.new(fullname: fullname, phone: phone, datein: datein, dateout: dateout, roomtype: roomtypes, occupancy: occupancy, adults: adults, children: children)
