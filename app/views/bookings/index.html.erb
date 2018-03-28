@@ -2,7 +2,7 @@
 
 <h1>Bookings</h1>
 
-<table>
+<table id="example" class="display" style="width:100%">
   <thead>
     <tr>
       <th>Booking date</th>
@@ -10,7 +10,9 @@
       <th>Double room</th>
       <th>Single room</th>
       <th>Twin room</th>
-      <th colspan="3"></th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -18,18 +20,54 @@
     <% @bookings.each do |booking| %>
       <tr>
         <td><%= booking.booking_date %></td>
-        <td><%= booking.deluxe_room %></td>
-        <td><%= booking.double_room %></td>
-        <td><%= booking.single_room %></td>
-        <td><%= booking.twin_room %></td>
+        <td>
+          <% if booking.deluxe_room %>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+          <% else %>
+            <span style="color: green;">Available</span>
+          <% end %>
+        </td>
+        <td>
+          <% if booking.double_room %>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+          <% else %>
+            <span style="color: green;">Available</span>
+          <% end %>
+        </td>
+        <td>
+          <% if booking.single_room %>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+          <% else %>
+            <span style="color: green;">Available</span>
+          <% end %>
+        </td>
+        <td>
+          <% if booking.twin_room %>
+            <span style="color: maroon;"><strong>BOOKED!</strong></span>
+          <% else %>
+            <span style="color: green;">Available</span>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+  <tfoot>
+      <tr>
+        <th>Booking date</th>
+        <th>Deluxe room</th>
+        <th>Double room</th>
+        <th>Single room</th>
+        <th>Twin room</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+  </tfoot>
 </table>
 
 <br>
 
-<%= link_to 'New Booking', new_booking_path %>
+<%= link_to '+ New Booking', new_booking_path %>

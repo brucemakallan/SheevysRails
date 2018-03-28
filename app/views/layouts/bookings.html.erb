@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- for search engine description -->
 	<meta name="description" content="Sheevy's Bed and Breakfast: Uganda">
 	
@@ -10,61 +10,59 @@
 	
 	<%= csrf_meta_tags %>
 
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag    'bookings' %>
+	
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+	<!-- Datatables -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	
 </head>
 
-<body data-spy="scroll" data-target=".navbar">
-	<div class="main-body-container">
-		
-		<!-- NAV BAR -->
-		<div class="container-fluid navbar-section">
-			<nav class="navbar fixed-top navbar-expand-sm navbar-dark">
-				
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+<body>
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Dashboard</a>
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap">
+				<a class="nav-link" href="#">Sign out</a>
+			</li>
+		</ul>
+	</nav>
 
-				<!-- Logo -->
-				<%= link_to image_tag("logo.png", height: 50, alt: "Logo"), home_path, class: "navbar-brand" %>
-				
-				<!-- Links -->
-				<div class="collapse navbar-collapse" id="nav-content">   
-					<ul class="navbar-nav">
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
 						<li class="nav-item">
-							<%= link_to 'about', home_path+"#about", class: "nav-link" %>
+							<%= link_to "All Bookings", bookings_path, class: "nav-link" %>
 						</li>
 						<li class="nav-item">
-							<%= link_to 'amenities', home_path+"#amenities", class: "nav-link" %>
+							<%= link_to "+ New Booking", new_booking_path, class: "nav-link" %>
 						</li>
 						<li class="nav-item">
-							<%= link_to 'rooms', rooms_path, class: "nav-link" %>
-						</li>
-						<li class="nav-item">
-							<%= link_to 'gallery', gallery_path, class: "nav-link" %>
-						</li>
-						<li class="nav-item">
-							<%= link_to 'feedback', home_path+"#feedback", class: "nav-link" %>
-						</li>
-						<li class="nav-item">
-							<%= link_to 'location', location_path, class: "nav-link" %>
-						</li>
-						<li class="nav-item">
-							<%= link_to 'contacts', home_path+"#contacts", class: "nav-link" %>
+							<%= link_to "< Sheevy's Home", home_path, class: "nav-link" %>
 						</li>
 					</ul>
 				</div>
 			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+				
+				<%= yield %>
+
+			</main>
 		</div>
-
-		<div class="belownav"></div>
-
-		<!-- The rest of the body is inserted here -->
-		<%= yield %>
-
-		<footer>
-			<p>&copy; <%= Time.new.year %> All Rights Reserved. Sheevy's Bed &amp; Breakfast</p>
-		</footer>
 	</div>
+
+	<!-- Datatables -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    $('#example').DataTable();
+		} );
+	</script>
+
 </body>
 </html>

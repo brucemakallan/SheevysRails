@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'home', to: 'pages#home' #post request for the button
   get 'rooms', to: 'pages#rooms'
   get 'location', to: 'pages#location'
+  get 'availability', to: 'pages#availability'
 
   root to: 'pages#home' #set homepage
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

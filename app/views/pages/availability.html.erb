@@ -1,0 +1,223 @@
+<!-- AVAILABILTY OF ROOMS: BOOKING -->
+<div class="container-fluid location-section largepadding dark belownav">
+	<h1 class="white">Booking</h1>
+	<h3>Room Availability</h3>
+</div>
+
+<div class="container-fluid largepadding availability-section">
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h3>Rooms available for the dates you selected</h3>	
+			<table class="table table-striped dates-table">
+				<thead>
+					<tr>
+						<th><p>Selected Dates</p></th>
+						<th><p>Deluxe</p></th>
+						<th><p>Double</p></th>
+						<th><p>Single</p></th>
+						<th><p>Twin</p></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% $selected_dates_ar.each do |selected_date| %>
+					<tr>
+						<td>
+							<%= Date.strptime(selected_date[:booking_date].to_s, '%Y%m%d').strftime("%d %b %Y") %>
+						</td>
+						<td>
+							<% if selected_date[:deluxe_room] %>
+							<span class="booked-room">Taken</span>
+							<% else %>
+							<span class="available-room">AVAILABLE</span>
+							<% end %>
+						</td>
+						<td>
+							<% if selected_date[:double_room] %>
+							<span class="booked-room">Taken</span>
+							<% else %>
+							<span class="available-room">AVAILABLE</span>
+							<% end %>
+						</td>
+						<td>
+							<% if selected_date[:single_room] %>
+							<span class="booked-room">Taken</span>
+							<% else %>
+							<span class="available-room">AVAILABLE</span>
+							<% end %>
+						</td>
+						<td>
+							<% if selected_date[:twin_room] %>
+							<span class="booked-room">Taken</span>
+							<% else %>
+							<span class="available-room">AVAILABLE</span>
+							<% end %>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+			<hr>
+		</div>
+	</div>
+
+	<div class="row margin-top">
+		<div class="col-sm-6 tariffs">			
+			<div class="col-sm-12">
+				<h3>Accommodation Tariffs</h3>	
+				<table class="table">
+					<thead>
+						<tr>
+							<th><p>Room Type</p></th>
+							<th><p>Double occupancy</p></th>
+							<th><p>Single occupancy</p></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Deluxe</td>
+							<td>USD 70</td>
+							<td>USD 50</td>
+						</tr>
+						<tr>
+							<td>Standard Double</td>
+							<td>USD 60</td>
+							<td>USD 55</td>
+						</tr>
+						<tr>
+							<td>Twin room</td>
+							<td>USD 50</td>
+							<td>USD 45</td>
+						</tr>
+						<tr>
+							<td>Single room</td>
+							<td>USD 45</td>
+							<td>USD 40</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div> 
+
+		<div class="col-sm-6">
+			<%= form_tag "home", name: "form1" do %>
+			<div class="row margin-top">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<p class="form-headings">Full Name:</p>
+								<input type="text" class="form-control input-lg" name="fullname" id="fullname" required="required">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<p class="form-headings">Phone:</p>
+								<input type="text" class="form-control input-lg" name="phone" id="phone" required="required">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<p class="form-headings">Adults:</p>
+								<select class="form-control" name="adults">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<p class="form-headings">Children:</p>
+								<select class="form-control" name="children">
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row room-types">
+						<div class="col-md-12">
+							<div class="form-group">
+								<p class="form-headings">Room Types:</p>
+								<div class="row">
+									<div class="col-md-6">
+										<input type="checkbox" name="deluxe_chx" value="deluxe_room"> Deluxe room<br>
+										<input type="checkbox" name="double_chx" value="double_room"> Standard Double<br>
+									</div>
+									<div class="col-md-6">
+										<input type="checkbox" name="twin_chx" value="twin_room"> Twin room<br>
+										<input type="checkbox" name="single_chx" value="single_room"> Single room<br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> 
+
+					<div class="row">
+						<div class="col-md-12">
+							<%= submit_tag 'Book Now', class: "btn btn-4 btn-block margin-top" %>
+						</div>							
+					</div>
+				</div> 
+			</div>
+			<% end %>
+		</div>	
+	</div>
+
+	<div class="row margin-top">
+		<div class="col-sm-12">
+			<div class="card card-body">
+				<p><%= link_to "Learn More about our Rooms", rooms_path %></p>
+				<p>Detailed information about each Room</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row tocs margin-top">
+		<div class="col-sm-12">
+			<div class="card card-body">
+				<h3>Terms and Conditions</h3>
+
+				<p>Children and extra beds</p>
+				<ul>
+					<li>One child may stay free of charge when using existing bedding.</li>
+					<li>One child may stay at the price of 50 % of the room stay per person per night in an extra bed.</li>
+					<li>Older children/adults may stay at the price of 100 % of the room stay per person per night in an extra bed.</li>
+					<li>There are no cribs provided in a room</li>
+				</ul>
+
+				<p>All prices are Per Room Per Night inclusive of Bed &amp; Breakfast</p>
+
+				<p>Exchange rate: UGX 3600 for USD 1 and USD 1 for UGX 3500</p>
+
+				<p>Check-in: from 10:00-22:00 hours</p>
+
+				<p>Check-out: until 10:00 hours</p>
+
+				<p><i>Stay with us Feel like Family</i></p>
+			</div>
+		</div>
+	</div>
+</div>

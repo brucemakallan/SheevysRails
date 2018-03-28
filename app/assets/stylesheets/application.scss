@@ -276,6 +276,35 @@ footer {
 
 /*
 *
+* AVAILABILITY
+*
+*/
+.dates-table {
+	font-family: $spinnaker;
+	font-size: 14px;
+}
+.booked-room {
+	color: maroon;
+}
+.available-room {
+	color: #006400; 
+	font-weight: bold;
+}
+.availability-section {
+	
+}
+.margin-top {
+	margin-top: 30px !important;
+}
+.room-types {
+	font-family: spinnaker;
+    font-size: 16px;
+}
+
+
+
+/*
+*
 * GALLERY CSS
 *
 */
