@@ -64,6 +64,4 @@ gem 'devise'
 
 gem 'petergate', '~> 1.8', '>= 1.8.1'
 
-gem 'disqus_rails'
-
 ruby "2.4.0"
