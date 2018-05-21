@@ -64,6 +64,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    disqus_rails (0.0.7)
+      rails
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -189,6 +191,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  disqus_rails
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails

@@ -33,7 +33,7 @@ h2 {
 }
 p {
 	font-family: $spinnaker;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 28px;
 	font-weight: 400;
 	letter-spacing: -0.3px;
@@ -68,6 +68,13 @@ small {
 .grey {
 	background-color: #E8E8E8;
 }
+.black {
+	color: black;
+
+	h1, h2, h3, h4, h5, h6, p {
+		color: black !important;
+	}
+}
 .white {
 	color: white;
 }
@@ -80,7 +87,13 @@ small {
 .greydescription {
 	color: #333;
 }
-
+.boarders {
+	border: 1px solid #eaeaea;
+	border-radius: 5px;
+}
+.smallpadding {
+	padding: 30px;
+}
 .largepadding {
 	padding: 50px 15px;
 }
@@ -100,6 +113,12 @@ small {
 	background-color: #f0b050;
 	text-decoration: none;
 	color: white;
+}
+.house-icon {
+	.fa {
+		font-size: 90px !important;
+		color: green !important;
+	}
 }
 
 
@@ -132,6 +151,29 @@ small {
 	position: fixed;
 	z-index: 10;
 	top: 90px;
+}
+
+.links-widget {
+	position: fixed;
+	z-index: 10;
+	top: 150px;
+	right: 0;
+	padding: 7px;
+	border-radius: 5px;
+	background-color: $primary_color;
+	color: white;
+	min-width: 10px;
+	min-height: 10px;
+	font-family: "Times New Roman";
+	font-size: 15px; 
+
+	.fa {
+		font-size: 20px;
+		color: white
+	}
+	.fa:hover {
+		color: yellow;
+	}
 }
 
 /*Carousel*/

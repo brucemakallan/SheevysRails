@@ -1,5 +1,11 @@
 <!-- THE HOME PAGE -->
 
+<!-- WIDGET -->
+<div class="links-widget">
+	<%= link_to fa_icon("comment"), "#feedback", title: "Live Chat" %><br>
+	<%= link_to fa_icon("calendar"), "#booking-section", title: "Booking" %>
+</div>
+
 <!-- CAROUSEL -->
 <div id="demo" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
@@ -29,8 +35,9 @@
 	</a>
 </div>
 
+                            
 <!-- BOOKING -->
-<div class="booking-heading">
+<div class="booking-heading" id="booking-section">
 	Book Your Stay
 </div>    
 
@@ -72,23 +79,29 @@
 <div class="container-fluid about-section largepadding" id="about">
 	<div class="body-card">
 		<div class="row">
+			<div class="col-sm-12 centered">
+				<h1 class="brown house-icon">Our Story</h1>
+				<!-- fa_icon "home" -->
+			</div>
 			<div class="col-sm-6">
-				<h1 class="brown">Our Story</h1>
-				<p>For the lovers of sounds of birds humming in the trees, wind in the trees and green lawns yet you need to be close to the action then Sheevys BNB is for you. </p>
-
-				<p>Conveniently located 3.48kms on Kasese road from Fort Portal town Sheevys is an ideal and pleasant place for both travelers both on leisure or business. Town is just 10 minutes away where there is a good selection of banks, churches, hairdressers, supermarkets, shops and excellent restaurants. For golf lovers the golf course can be accessed easily and night life Mountains of the moon bar and Africana bar are also nearby.</p>
+				<p>Sheevys BNB is a hidden gem yet conveniently located 3.48kms on Kasese Road from Fort Portal Town. It’s an ideal destination and pleasant place for both travelers on leisure or business.</p> 
 				
-				<p>Sheevys BNB has easy access to most Kabarole local attractions which can be easily done as a day trip from our BNB. Or on arrangement with our in house Tour guide who can take you on the Ruwenzori region experience with our available itinerary and added cost.</p>
-			</div>			
-			<div class="col-sm-6">
-				<h1 class="brown">Our Offer</h1>
-		
-				<p>In addition to a tranquil setting we pride ourselves of maintaining our high standards. We and our staffs like people and we go an extra mile to make our guests feel at home. And get that wow experience.</p>
-
-				<p>Our rates include bed and breakfast.
-				The rooms are just as impressive as the communal areas. Tile floors/carpeted floor support comfortable warm beds and each room boasts a walk-in shower or bathtub with both warm and cold water. </p>
+				<p>The lovers of nature will wake up in the morning to the sounds of birds singing and gentle winds blowing fresh unpolluted air from the surrounding trees in our garden.</p>
 				
-				<p>The hotel has a swimming pool, sauna and steam bath. There’s also a mini spa and spa services can be arranged on request. We use natural and local ingredients as well as products made with honey, avocados all bought locally from the local village. We provide friendly professional</p>				
+				<p>A well-manicured lawn with a variety of plants and flowers nestled in unique rocks and stones will offer you a breathtaking experience. The calmness and quiet is as energizing as it is soothing.</p>
+				
+				<p>Several Tourist attractions like Queen Elizabeth National Park, Kibaale National Park, Amabere, Several Crater Lakes, Hiking and Semiliki Hot springs can be accessed easily as a daily trip from our BNB.   Our in house Guide will be happy to take you on the Ruwenzori experience at an added cost subsequent to our available itinerary. </p>
+			</div>
+			<div class="col-sm-6">				
+				<p>The central business is just 10 minutes’ drive away.  Decent choice of restaurants, supermarkets, shops, hairdressers and banks can be accessed easily in town.</p>
+				
+				<p>For Golf lovers Tooro Golf Club is conveniently close to CBD. For those who enjoy the night life the classy Mountains of the Moon Hotel bar and Africana Bar are within easy reach.</p>
+				
+				<p>In addition to a tranquil setting we pride ourselves in maintaining the high set standards. </p>
+				
+				<p>Our friendly and professional team of staff and we the owners will go an extra mile to make our Guests get a memorable holiday and ensure they get a wow experience.</p>
+				
+				<p>Stay With Us. Feel like family</p>
 			</div>			
 		</div>
 		<div class="row">
@@ -104,15 +117,28 @@
 
 <!-- AMENITIES -->
 <div class="container-fluid amenities-section largepadding dark" id="amenities">
-	<h1 class="white">Amenities</h1>
-	<h3>Get even more than you expected</h3>
-
-	<p>Sheevys offers some of the expected modern amenities including Wireless Internet access, Mini bar and Bed &amp; Breakfast.</p>
-
-	<p>The facility has an overlooking amazing garden a mini bar and meals offered on alacarte. A complimentary shuttle that drops and picks guests to CBD from 09am to 05pm.</p>
-
-	<p>The hotel has a swimming pool, sauna and steam bath. There’s also a mini spa and spa services can be arranged on request. We use natural and local ingredients as well as products made with honey, avocados all bought locally from the local village. We provide friendly professional</p>
-
+	<div class="row">
+		<div class="col-sm-12 centered">
+			<h1 class="white house-icon">Amenities</h1>
+			<h3>Back at our Bed &amp; Breakfast</h3>
+		</div>
+		<div class="col-sm-6 black">
+			<p>Sheevys offers some of the expected modern amenities including wireless internet access, mini bar laundry services and bed &amp; breakfast.</p>
+			
+			<p>The rooms are just as remarkable as the shared areas. Our rooms are some of the best in Fort Portal. Finished with tile floors which are partly covered with comfortable carpets.</p>
+			
+			<p>The rooms hold comfy beds that are sophisticatedly covered with white cotton linen that is always fresh and perfectly clean.</p>
+			
+			<p>We provide Double, Single and Twin rooms with an option of an extra bed in our Deluxe Room at an extra charge.</p>
+		</div>
+		<div class="col-sm-6 black">
+			<p>The walk in showers are fitted with modern amenities that have both warm and cold water.</p>
+			
+			<p>Wireless Internet Access is available in all the rooms and areas around our property. </p>
+			
+			<p>The facility has an overlooking amazing garden a mini bar and meals offered on alacarte. A complimentary shuttle is available that drops and picks guests to CBD from 09am to 05pm every two hours.</p>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="row">
@@ -229,7 +255,8 @@
 </div>
 <div class="container-fluid location-section largepadding">
 	<div class="row form-row">
-		<div class="col-sm-3 box-item"></div> <!-- To help centre the form -->
+
+		<!-- Feedback Form -->
 		<div class="col-sm-6">
 			<%= form_tag "home", name: "form2" do %>
 				<div class="row">
@@ -313,7 +340,37 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="col-sm-3 box-item"></div> <!-- To help centre the form -->
+
+		<!-- Disqus -->
+		<div class="col-sm-6 boarders">
+			<div id="disqus_thread"></div>
+		</div> <!-- To help centre the form -->
 	</div>
 </div>
 
+
+<!-- Disqus -->
+<script>
+	/**
+	*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+	/*
+	var disqus_config = function () {
+	this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	https://disqus.com/home/forums/sheevys/
+	*/
+	var disqus_config = function () {
+		this.page.url = "https://disqus.com/home/forums/sheevys/";  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = 9384724; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+
+	(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://sheevys.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
