@@ -10,13 +10,13 @@ class PagesController < ApplicationController
   			"classes": "carousel-item active",
   			"image_url": "carousel/001.jpg",
   			"heading": "Sheevy's Bed and Breakfast",
-  			"subheading": "Each member of our team strives to make our guests feel at home and we look forward to welcoming you to our piece of paradise in beautiful Tooro."
+  			"subheading": "A gem in the heart of Fortportal"
   		},
   		"image2" => {
   			"classes": "carousel-item",
   			"image_url": "carousel/002.jpg",
   			"heading": "Sheevy's Bed and Breakfast",
-  			"subheading": "Each member of our team strives to make our guests feel at home and we look forward to welcoming you to our piece of paradise in beautiful Tooro."
+  			"subheading": "A gem in the heart of Fortportal"
   		}
 	  }
 
