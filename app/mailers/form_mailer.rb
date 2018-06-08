@@ -5,11 +5,11 @@ class FormMailer < ApplicationMailer
 
 	def send_email(email)
 		@email = email
-		mail(to: "makallancg2@gmail.com", subject: "New Sheevys Booking")			
+		mail(to: "doreen@eatforlife.ug", subject: "New Sheevys Booking")			
 	end
 
 	def send_feedback(feedback)
 		@feedback = feedback
-		mail(to: "makallancg2@gmail.com", subject: "Sheevys Feedback")
+		mail(to: "doreen@eatforlife.ug", subject: "Sheevys Feedback")
 	end
 end
