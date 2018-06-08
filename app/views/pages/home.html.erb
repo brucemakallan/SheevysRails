@@ -43,14 +43,13 @@
 
 <div class="container-fluid booking-section">
 	<div class="row form-row d-flex h-100">
-		<div class="col-sm-12">
+		<div class="col-sm-6 body-card">
 			<%= form_tag "home", name: "form1" do %>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
-							<div class="col-sm-3"></div>
 							<!-- Check in -->
-							<div class="col-md-2">
+							<div class="col-md-4">
 								<div class="form-group">
 									<p class="form-headings">Check-in date &amp; Time:</p>
 									<input type="date" class="form-control input-lg" name="checkin" id="checkin" required="required">
@@ -74,7 +73,7 @@
 								</div>
 							</div>
 							<!-- Check out date -->
-							<div class="col-md-2">
+							<div class="col-md-4">
 								<div class="form-group">
 									<p class="form-headings">Check-out date &amp; Time:</p>
 									<input type="date" class="form-control input-lg" name="checkout" id="checkout" required="required">
@@ -85,14 +84,29 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-md-2">
+							<div class="col-md-4">
 								<%= submit_tag 'Check Availability', class: "btn btn-4 btn-block" %>
 							</div>			
-							<div class="col-sm-3"></div>				
 						</div>
 					</div> 
 				</div>
 			<% end %>
+		</div>		
+		
+		<div class="col-sm-5 col-sm-offset-1 body-card payment-info">
+			<p>&bull; Check-in: from 10am - 10pm</p>
+			<p>&bull; Check-out: until 10pm</p>
+			
+			<p>&bull; <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Payment Methods</a></p>
+			<div class="collapse" id="collapseExample">
+			  <div class="card card-body">
+			    <ul style="font-size: 16px; line-height: 23px;">
+			    	<li>Visa</li>
+			    	<li>American Express</li>
+			    	<li>Pay in local currency or dollars at the property</li>
+			    </ul>
+			  </div>
+			</div>
 		</div>		
 	</div>
 </div>
@@ -106,9 +120,9 @@
 				<!-- fa_icon "home" -->
 			</div>
 			<div class="col-sm-6">
-				<p>Sheevys Bed and Breakfast is a hidden gem yet conveniently located. A decent choice of restaurants are located within a 10 to 15 minutes drive. It’s an ideal destination and pleasant place for both travellers on leisure or business.</p> 
+        <p>Sheevys Bed and Breakfast is a hidden gem yet conveniently located. A decent choice of restaurants are located within a 10 to 15 minutes drive. It’s an ideal destination and pleasant place for both travellers on leisure or business.</p>				
 				
-				<p>The lovers of nature will wake up in the morning to the sounds of birds singing and gentle winds blowing fresh unpolluted air from the surrounding trees in our garden.</p>
+        <p>The lovers of nature will wake up in the morning to the sounds of birds singing and gentle winds blowing fresh unpolluted air from the surrounding trees in our garden.</p>
 				
 				<p>A well-manicured lawn with a variety of plants and flowers nestled in unique rocks and stones will offer you a breathtaking experience. The calmness and quiet is as energizing as it is soothing.</p>
 				
