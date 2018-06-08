@@ -5,16 +5,13 @@
 <%= @email.phone %><br>
 
 <div class="headings">Check-in date:</div> 
-<%= Date.strptime(@email.datein).strftime("%d %b %Y") %><br>
+<%= @email.datein %><br>
 
 <div class="headings">Check-out date:</div> 
-<%= Date.strptime(@email.dateout).strftime("%d %b %Y") %><br>
+<%= @email.dateout %><br>
 
 <div class="headings">Room Types:</div> 
 <%= @email.roomtype %><br>
-
-<!-- <div class="headings">Occupancy:</div> 
-<%= @email.occupancy %><br> -->
 
 <div class="headings">Number of Adults:</div> 
 <%= @email.adults %><br>
