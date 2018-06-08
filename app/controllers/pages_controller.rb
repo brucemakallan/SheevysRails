@@ -4,8 +4,7 @@ class PagesController < ApplicationController
   
   def home 
     $selected_dates_ar = Array.new #array of all selected dates: Booking objects
-    $selected_checkin_time = '10 am'
-
+    
     @carousel_items = {
   		"image1" => {
   			"classes": "carousel-item active",
@@ -34,9 +33,6 @@ class PagesController < ApplicationController
       if params[:commit] == "Check Availability" #Check Availability button submitted
         puts "Check Availability button Clicked"
         
-        #Get checkin time
-        $selected_checkin_time = params['checkin_time']
-
         #Validate dates
         checkin = Date.strptime(params['checkin'], '%Y-%m-%d').strftime("%Y%m%d").to_i
         checkout = Date.strptime(params['checkout'], '%Y-%m-%d').strftime("%Y%m%d").to_i
@@ -121,7 +117,6 @@ class PagesController < ApplicationController
         fullname = params['fullname']
         phone = params['phone']
         datein = Date.strptime($selected_dates_ar.first[:booking_date].to_s, '%Y%m%d')
-        dateinStr =  datein.to_s + " at " + $selected_checkin_time
         dateout = Date.strptime($selected_dates_ar.last[:booking_date].to_s, '%Y%m%d')
         occupancy = ""
         adults = params['adults']
@@ -134,7 +129,7 @@ class PagesController < ApplicationController
         roomtypes = "Deluxe Room: #{deluxe_rooms},   Double Room: #{double_rooms},   Twin Room: #{twin_rooms},   Single Room: #{single_rooms}"
         
         #send email
-        @email = Email.new(fullname: fullname, phone: phone, datein: dateinStr, dateout: dateout, roomtype: roomtypes, occupancy: occupancy, adults: adults, children: children)
+        @email = Email.new(fullname: fullname, phone: phone, datein: datein, dateout: dateout, roomtype: roomtypes, occupancy: occupancy, adults: adults, children: children)
         FormMailer.send_email(@email).deliver
         
         #redirect
