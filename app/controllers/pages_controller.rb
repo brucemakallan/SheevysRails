@@ -136,4 +136,17 @@ class PagesController < ApplicationController
         redirect_to home_path, notice: 'Your Booking information was sent'
     end
   end
+
+
+  def breakfast
+    @page_title = "Sheevy's | Breakfast"
+  end
+
+
+
+  def specials
+    @page_title = "Sheevy's | Specials"
+  end
+
+
 end

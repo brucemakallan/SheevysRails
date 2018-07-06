@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'location', to: 'pages#location'
   get 'availability', to: 'pages#availability'
   post 'availability', to: 'pages#availability' #post request for the button
+  get 'breakfast', to: 'pages#breakfast'
+  get 'specials', to: 'pages#specials'
 
   root to: 'pages#home' #set homepage
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
